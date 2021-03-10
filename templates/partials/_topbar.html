@@ -1,0 +1,58 @@
+{% load static %}
+
+<!-- BEGIN TOP BAR -->
+<div class="pre-header">
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN TOP BAR MENU -->
+            <div class="col-md-12 col-sm-12 additional-nav">
+                <!-- Alerts -->
+                <ul class="list-unstyled list-inline pull-left" >
+                    {% include 'partials/_alerts.html' %}
+                </ul>
+                <ul class="list-unstyled list-inline pull-right">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'my_account' %}"
+                            {% if 'my_account' in request.path %}
+                                class="list-group-item clearfix active"
+                            {% else %}
+                                class="list-group-item clearfix"
+                            {% endif %}
+                            >Welcome {{ user.username }} (My Account)</a></li>
+                        <li><a href="{% url 'wishlist' %}"
+                            {% if 'wishlist' in request.path %}
+                                class="list-group-item clearfix active"
+                            {% else %}
+                                class="list-group-item clearfix"
+                            {% endif %}
+                            >My Wishlist</a></li>
+                        <li><a href="javascript:{document.getElementById('logout').submit()}"class="list-group-item clearfix">
+                            Log Out</a>
+                            <form action="{% url 'logout' %}" method="POST" id="logout">
+                                {% csrf_token %}
+                                <input type="hidden">
+                            </form>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'login' %}"
+                            {% if 'login' in request.path %}
+                                class="list-group-item clearfix active"
+                            {% else %}
+                                class="list-group-item clearfix"
+                            {% endif %}
+                            >Log In</a></li>
+                        <li><a href="{% url 'register' %}"
+                            {% if 'register' in request.path %}
+                                class="list-group-item clearfix active"
+                            {% else %}
+                                class="list-group-item clearfix"
+                            {% endif %}
+                            >Register</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <!-- END TOP BAR MENU -->
+        </div>
+    </div>        
+</div>
+<!-- END TOP BAR -->

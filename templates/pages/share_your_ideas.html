@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %} | Share Your Ideas {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main">
+    <div class="container">
+      <ul class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="active">Share Your Ideas</li>
+      </ul>
+      <!-- BEGIN SIDEBAR & CONTENT -->
+      <div class="row margin-bottom-40">
+        <!-- BEGIN SIDEBAR -->
+        <div class="sidebar col-md-3 col-sm-3">
+          <ul class="list-group margin-bottom-25 sidebar-menu">
+            {% if user.is_authenticated %}
+            <li class="list-group-item clearfix"><a href="{% url 'my_account' %}"><i class="fa fa-angle-right"></i> My account</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'wishlist' %}"><i class="fa fa-angle-right"></i> My wishlist</a></li>
+            {% else %}
+            <li class="list-group-item clearfix"><a href="{% url 'login' %}"><i class="fa fa-angle-right"></i>Log In</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'register' %}"><i class="fa fa-angle-right"></i>Register</a></li>
+            {% endif %}
+            <li class="list-group-item clearfix"><a href="{% url 'about' %}"><i class="fa fa-angle-right"></i>About Us</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'contact_us' %}"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+          </ul>
+
+          <address>
+            <strong>Email</strong><br>
+            <a href="mailto:info@stunninghome.com">info@stunning.com</a><br>
+          </address>
+        </div>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-9 col-sm-9">
+          <h1>Share Your Room Ideas</h1>
+          <div class="content-page">
+
+            <h2>Fill in the Form</h2>
+            <p>Have some ideas for a house or a room styling? Want to share your room or some product you love? Feel free to share it with the community!</p>
+            
+            <!-- BEGIN FORM-->
+            <form action="#" class="default-form" role="form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="email">Email <span class="require">*</span></label>
+                <input type="text" class="form-control" id="email" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" rows="8" id="message"></textarea>
+              </div>
+              <div class="form-group">
+                <label class="col-lg-2 control-label">Upload Image</label>
+                <div class="col-lg-8">
+                  <input type="file">
+                </div>
+              </div>
+              <div class="padding-top-20">                  
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+            <!-- END FORM-->          
+          </div>
+        </div>
+        <!-- END CONTENT -->
+      </div>
+      <!-- END SIDEBAR & CONTENT -->
+    </div>
+  </div>
+
+  {% endblock %}

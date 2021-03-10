@@ -1,7 +1,68 @@
 {% extends 'base.html' %}
 
+{% block title %} | About Us {% endblock %}
+
+{% load static %}
+
 {% block content %}
 
-<h1>About</h1>
+<div class="main">
+    <div class="container">
+      <ul class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="active">About Us</li>
+      </ul>
+      <!-- BEGIN SIDEBAR & CONTENT -->
+      <div class="row margin-bottom-40">
+        <!-- BEGIN SIDEBAR -->
+        <div class="sidebar col-md-3 col-sm-3">
+          <ul class="list-group margin-bottom-25 sidebar-menu">
+            {% if user.is_authenticated %}
+            <li class="list-group-item clearfix"><a href="{% url 'my_account' %}"><i class="fa fa-angle-right"></i> My account</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'wishlist' %}"><i class="fa fa-angle-right"></i> My wishlist</a></li>
+            {% else %}
+            <li class="list-group-item clearfix"><a href="{% url 'login' %}"><i class="fa fa-angle-right"></i>Log In</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'register' %}"><i class="fa fa-angle-right"></i>Register</a></li>
+            {% endif %}
+            <li class="list-group-item clearfix"><a href="{% url 'contact_us' %}"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- END SIDEBAR -->
 
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-9 col-sm-9">
+          <h1>About us</h1>
+          <div class="content-page">
+            <p><img src="{% static 'pages/img/about.jpg' %}" alt="About us" class="img-responsive"></p> 
+
+            <p>We love beauty and aesthetics.</p>
+
+            <p>We love to create interesting things.</p>
+
+            <p>And, most importantly, we love different houses, comfortable life and feeling good!</p>
+
+            <p>That's what made us create something for everyone. We want to help others not just to feel good about their home but to love being there and relax.</p>
+
+            <p>Because home is something we need to pay attention to. We live there. It means that if we take care about our home, we take care about ourselves.</p>
+            
+            <h3>Get ideas in our website about:</h3>
+            <ul>
+              <li>Adding more colors to your room</li>
+              <li>Creating aesthetics</li>
+              <li>Just some interesting features and stuff</li>
+            </ul>
+
+            <p>We hope that we are able to help you. If you have any questions or if there is just something on your mind, feel free to contact us and we will get back to you as soon as possible.</p>
+
+            <p>Moreover, if you have any interesting or funny idea related to houses, please go to the section <a href="{% url 'share_your_ideas' %}">Share Your Ideas</a>  and write or show it to us!</p>
+
+            <p>Thank you and we hope you found something interesting here!</p>
+
+          </div>
+        </div>
+        <!-- END CONTENT -->
+      </div>
+      <!-- END SIDEBAR & CONTENT -->
+    </div>
+  </div>
 {% endblock %}

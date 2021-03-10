@@ -1,0 +1,17 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+{% block branding %}
+
+<h1 id="head">
+    <img src="{% static 'corporate/img/logos/home_logo.png' %}" alt="Home Apliances" height="50" width="150" class="brand_img"> Admin Area
+</h1>
+
+{% endblock %}
+
+{% block extrastyle %}
+
+<link rel="stylesheet" href="{% static 'pages/admin.css' %}">
+
+{% endblock %}

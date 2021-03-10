@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} | My Account {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main">
+    <div class="container">
+      <ul class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="active">My Account Page</li>
+      </ul>
+      <!-- BEGIN SIDEBAR & CONTENT -->
+      <div class="row margin-bottom-40">
+        <!-- BEGIN SIDEBAR -->
+        <div class="sidebar col-md-3 col-sm-3">
+          <ul class="list-group margin-bottom-25 sidebar-menu">
+            <li class="list-group-item clearfix"><a href="{% url 'wishlist' %}"><i class="fa fa-angle-right"></i> My wishlist</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'contact_us' %}"><i class="fa fa-angle-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-9 col-sm-7">
+          <div class="content-page">
+            <h3>My Account</h3>
+            <ul>
+              <li><a href="javascript:;">Modify your wish list</a></li>
+            </ul>
+            <!--<hr>-->
+          </div>
+        </div>
+        <!-- END CONTENT -->
+      </div>
+      <!-- END SIDEBAR & CONTENT -->
+    </div>
+  </div>
+
+{% endblock %}

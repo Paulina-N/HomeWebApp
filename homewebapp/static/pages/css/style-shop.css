@@ -324,7 +324,7 @@ Header and header elements
 
 /* Catalogue styles */
 .product-item {
-	padding: 12px 12px 16px;
+	padding: 12px 12px 12px;
 	background: #fff;
 	position: relative;
 }
@@ -416,7 +416,7 @@ Header and header elements
 	float: right;
 	color: #a8aeb3;
 	border: 1px #ededed solid;
-	padding: 3px 6px;
+	padding: 1px 6px;
 }
 .product-item .add2cart:hover {
 	color: #fff !important;

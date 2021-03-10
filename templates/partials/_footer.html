@@ -1,0 +1,73 @@
+{% load static %}
+
+<!-- BEGIN PRE-FOOTER -->
+<div class="pre-footer">
+    <div class="container">
+      <div class="row">
+        <!-- BEGIN BOTTOM ABOUT BLOCK -->
+        <div class="col-md-3 col-sm-6 pre-footer-col">
+          <h2>About us</h2>
+          <p>We search and offer original ideas for home improvement and decorating. </p>
+        </div>
+        <!-- END BOTTOM ABOUT BLOCK -->
+        <!-- BEGIN BOTTOM INFO BLOCK -->
+        <div class="col-md-3 col-sm-6 pre-footer-col">
+          <h2>Information</h2>
+          <ul class="list-unstyled">
+            <li><i class="fa fa-angle-right"></i> <a href="{% url 'about' %}">About Us</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{% url 'contact_us' %}">Contact Us</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{% url 'contact_us' %}">FAQ</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{% url 'contact_us' %}">Privacy Policy</a></li>
+            <li><i class="fa fa-angle-right"></i> <a href="{% url 'contact_us' %}">Terms & Conditions</a></li>
+          </ul>
+        </div>
+  
+        <!-- BEGIN BOTTOM CONTACTS -->
+        <div class="col-md-3 col-sm-6 pre-footer-col">
+          <h2>Our Contacts</h2>
+          <address class="margin-bottom-40">
+            Email: <a href="mailto:info@stunninghome.com">info@stunninghome.com</a><br>
+          </address>
+        </div>
+        <!-- END BOTTOM CONTACTS -->
+      </div>
+      <hr>
+      <div class="row">
+        <!-- BEGIN NEWLETTER -->
+        <div class="col-md-6 col-sm-6">
+          <div class="pre-footer-subscribe-box pull-left">
+            <h2>Newsletter</h2>
+            <form action="#">
+              <div class="input-group">
+                <input type="text" placeholder="youremail@mail.com" class="form-control">
+                <span class="input-group-btn">
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                </span>
+              </div>
+            </form>
+          </div> 
+        </div>
+        <!-- END NEWLETTER -->
+      </div>
+    </div>
+  </div>
+  <!-- END PRE-FOOTER -->
+
+    <!-- BEGIN FOOTER -->
+    <div class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- BEGIN COPYRIGHT -->
+            <div class="col-md-4 col-sm-4 padding-top-10">
+              2021 © Stunning Home. ALL Rights Reserved. 
+            </div>
+            <!-- END COPYRIGHT -->
+            <!-- BEGIN POWERED -->
+            <div class="col-md-4 col-sm-4 text-right">
+              <p class="powered">Powered by: <a href="{% url 'index' %}">stunninghome.com</a></p>
+            </div>
+            <!-- END POWERED -->
+          </div>
+        </div>
+      </div>
+      <!-- END FOOTER -->

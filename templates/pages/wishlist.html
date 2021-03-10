@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+
+{% block title %} | Wishlist {% endblock %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="main">
+    <div class="container">
+      <ul class="breadcrumb">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li class="active">My Wishlist</li>
+      </ul>
+      <!-- BEGIN SIDEBAR & CONTENT -->
+      <div class="row margin-bottom-40">
+        <!-- BEGIN SIDEBAR -->
+        <div class="sidebar col-md-3 col-sm-5">
+          <ul class="list-group margin-bottom-25 sidebar-menu">
+            {% if user.is_authenticated %}
+            <li class="list-group-item clearfix"><a href="{% url 'my_account' %}"><i class="fa fa-angle-right"></i> My account</a></li>
+            {% else %}
+            <li class="list-group-item clearfix"><a href="{% url 'login' %}"><i class="fa fa-angle-right"></i>Log In</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'register' %}"><i class="fa fa-angle-right"></i>Register</a></li>
+            {% endif %}
+            <li class="list-group-item clearfix"><a href="{% url 'about' %}"><i class="fa fa-angle-right"></i>About Us</a></li>
+            <li class="list-group-item clearfix"><a href="{% url 'contact_us' %}"><i class="fa fa-angle-right"></i>Contact Us</a></li>
+          </ul>
+          <ul class="list-group margin-bottom-25 sidebar-menu">
+            <li class="list-group-item clearfix dropdown active">
+              <a href="javascript:void(0);" class="collapsed">
+                <i class="fa fa-angle-right"></i>
+                Lighting
+                
+              </a>
+              <ul class="dropdown-menu" style="display:block;">
+                {% for key, value in lighting_choices.items %}
+                  <li class="list-group-item dropdown clearfix"><a href="{% url 'category' key %}" class="collapsed" value="{{ key }}"><i class="fa fa-angle-right"></i>{{ value }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="list-group-item clearfix dropdown active">
+              <a href="javascript:void(0);" class="collapsed">
+                <i class="fa fa-angle-right"></i>
+                Scents & Candles
+                
+              </a>
+              <ul class="dropdown-menu" style="display:block;">
+                {% for key, value in scents_candles.items %}
+                  <li class="list-group-item dropdown clearfix"><a href="{% url 'category' key %}" class="collapsed" value="{{ key }}"><i class="fa fa-angle-right"></i>{{ value }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="list-group-item clearfix dropdown active">
+              <a href="javascript:void(0);" class="collapsed">
+                <i class="fa fa-angle-right"></i>
+                Home Decor
+                
+              </a>
+              <ul class="dropdown-menu" style="display:block;">
+                {% for key, value in home_decor.items %}
+                  <li class="list-group-item dropdown clearfix"><a href="{% url 'category' key %}" class="collapsed" value="{{ key }}"><i class="fa fa-angle-right"></i>{{ value }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+            <li class="list-group-item clearfix dropdown active">
+              <a href="javascript:void(0);" class="collapsed">
+                <i class="fa fa-angle-right"></i>
+                Electronics
+                
+              </a>
+              <ul class="dropdown-menu" style="display:block;">
+                {% for key, value in electronics.items %}
+                  <li class="list-group-item dropdown clearfix"><a href="{% url 'category' key %}" class="collapsed" value="{{ key }}"><i class="fa fa-angle-right"></i>{{ value }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+          <div>
+          </div>
+        </div>
+        <!-- END SIDEBAR -->
+
+        <!-- BEGIN CONTENT -->
+        <div class="col-md-9 col-sm-7">
+          <h1>My Wishlist</h1>
+          <div class="goods-page">
+            <div class="goods-data clearfix">
+              <div class="table-wrapper-responsive">
+              <table summary="Shopping cart">
+                <tr>
+                  <th class="goods-page-image">Image</th>
+                  <th class="goods-page-description">Description</th>
+                  <th class="goods-page-stock">Stock</th>
+                  <th class="goods-page-price" colspan="2">Unit price</th>
+                </tr>
+                <tr>
+                  <td class="goods-page-image">
+                    <a href="javascript:;"><img src="assets/pages/img/products/model3.jpg" alt="Berry Lace Dress"></a>
+                  </td>
+                  <td class="goods-page-description">
+                    <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
+                    <p><strong>Item 1</strong> - Color: Green; Size: S</p>
+                    <em>More info is here</em>
+                  </td>
+                  <td class="goods-page-stock">
+                    In Stock
+                  </td>
+                  <td class="goods-page-price">
+                    <strong><span>$</span>47.00</strong>
+                  </td>
+                  <td class="del-goods-col">
+                    <a class="del-goods" href="javascript:;">&nbsp;</a>
+                    <a class="add-goods" href="javascript:;">&nbsp;</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="goods-page-image">
+                    <a href="javascript:;"><img src="assets/pages/img/products/model4.jpg" alt="Berry Lace Dress"></a>
+                  </td>
+                  <td class="goods-page-description">
+                    <h3><a href="javascript:;">Cool green dress with red bell</a></h3>
+                    <p><strong>Item 1</strong> - Color: Green; Size: S</p>
+                    <em>More info is here</em>
+                  </td>
+                  <td class="goods-page-stock">
+                    In Stock
+                  </td>
+                  <td class="goods-page-price">
+                    <strong><span>$</span>47.00</strong>
+                  </td>
+                  <td class="del-goods-col">
+                    <a class="del-goods" href="javascript:;">&nbsp;</a>
+                    <a class="add-goods" href="javascript:;">&nbsp;</a>
+                  </td>
+                </tr>
+              </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END CONTENT -->
+      </div>
+      <!-- END SIDEBAR & CONTENT -->
+    </div>
+  </div>
+
+{% endblock %}

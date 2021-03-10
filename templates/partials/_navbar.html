@@ -1,0 +1,90 @@
+{% load static %}
+
+<!-- BEGIN HEADER -->
+<div class="header">
+    <div class="container">
+      <a class="site-logo" href="{% url 'index' %}"><img src="{% static 'corporate/img/logos/home_logo.png' %}" alt="Home Appliances"></a>
+
+      <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
+
+      <!-- BEGIN NAVIGATION -->
+      <div class="header-navigation">
+        <ul>
+          <li><a href="{% url 'products' %}">All</a></li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+              Lighting 
+              
+            </a>
+              
+            <!-- BEGIN DROPDOWN MENU -->
+            <ul class="dropdown-menu">
+              {% for key, value in lighting_choices.items %}
+                <li><a href="{% url 'category' key %}" value="{{ key }}">{{ value }}</a></li>
+              {% endfor %}
+            </ul>
+            <!-- END DROPDOWN MENU -->
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+              Scents & Candles 
+              
+            </a>
+              
+            <!-- BEGIN DROPDOWN MENU -->
+            <ul class="dropdown-menu">
+              {% for key, value in scents_candles.items %}
+                <li><a href="{% url 'category' key %}" value="{{ key }}">{{ value }}</a></li>
+              {% endfor %}
+            </ul>
+            <!-- END DROPDOWN MENU -->
+          </li>
+          <li class="dropdown dropdown-megamenu">
+            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+              Home Decor
+              
+            </a>
+            <ul class="dropdown-menu">
+              {% for key, value in home_decor.items %}
+                <li><a href="{% url 'category' key %}" value="{{ key }}">{{ value }}</a></li>
+              {% endfor %}
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
+              Electronics 
+              
+            </a>
+              
+            <!-- BEGIN DROPDOWN MENU -->
+            <ul class="dropdown-menu">
+              {% for key, value in electronics.items %}
+                <li><a href="{% url 'category' key %}" value="{{ key }}">{{ value }}</a></li>
+              {% endfor %}
+            </ul>
+            <!-- END DROPDOWN MENU -->
+          </li>
+          <li><a href="{% url 'share_your_ideas' %}">Share Your Ideas</a></li>
+
+          <!-- BEGIN TOP SEARCH -->
+          <li class="menu-search">
+            <span class="sep"></span>
+            <i class="fa fa-search search-btn"></i>
+            <div class="search-box">
+              <form action="{% url 'search' %}">
+                <div class="input-group">
+                  <input type="text" name="keywords" placeholder="Search" class="form-control">
+                  <span class="input-group-btn">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                  </span>
+                </div>
+              </form>
+            </div> 
+          </li>
+          <!-- END TOP SEARCH -->
+        </ul>
+      </div>
+      <!-- END NAVIGATION -->
+    </div>
+  </div>
+  <!-- Header END -->
